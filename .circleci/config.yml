@@ -11,7 +11,7 @@ workflows:
       - build-and-test
       - heroku/deploy-via-git:
           #force: true
-          app_name: $HEROKU_APP_NAME
+          app-name: $HEROKU_APP_NAME
           filters:
             branches:
               only: master #only deploy when on the master branch
