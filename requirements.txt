@@ -4,13 +4,13 @@
 uvicorn>=0.16.0,<0.18.0
 fastapi>=0.64.0,<1.0.0
 python-multipart>=0.0.5,<0.1.0
-pydantic>=1.8.1,<=1.10.2
+pydantic==1.10.2
 typing_extensions>=3.7.4,<=4.3.0
 loguru>=0.5.3,<0.6.0
 pystan==2.17.1
 prophet==1.1.1
 Cad-usd-forecast-model==0.0.1 #My package
-pytest>=6.2.3,<6.3.0
+pytest==7.2.0
 requests>=2.23.0,<2.24.0
 
 #Note: the Cad-usd-forecast-model has Pystan and prophet as dependencies.
