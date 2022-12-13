@@ -1,0 +1,41 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@2.1.1
+  heroku: circleci/heroku@2.0.0
+
+jobs:
+#  build:
+#    docker:
+#      - image: cimg/python:3.9.13
+#    steps:
+#      - checkout
+#      - python/install-packages:
+#          pkg-manager: pip
+
+  build-and-test:
+    docker:
+      - image: cimg/python:3.8
+    working_directory: ~\forecast_api\forecast_api
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+          pip-dependency-file: "~\forecast_api\forecast_api\requirements.txt"
+          app-dir: "~\forecast_api\forecast_api"
+          args: pytest
+      - run:
+          name: Run tests
+          path: ~\forecast_api\forecast_api\app\tests\
+          command: pytest
+
+workflows:
+  build_test_deploy:
+    jobs:
+      - build-and-test
+      - heroku/deploy-via-git:
+          filters:
+            branches:
+              only: master #only deploy when on the master branch
+          requires:
+            - build-and-test # only deploy if the build-and-test job has completed
