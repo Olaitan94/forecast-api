@@ -7,6 +7,8 @@ orbs:
 
 workflows:
   build_test_deploy:
+    docker:
+      - image: cimg/python:3.9.13
     jobs:
       - build-and-test
       - heroku/deploy-via-git:
@@ -29,8 +31,8 @@ jobs:
 #          pkg-manager: pip
 
   build-and-test:
-    docker:
-      - image: cimg/python:3.9.16
+    #docker:
+      #- image: cimg/python:3.9.13
     steps:
       - checkout
       - python/install-packages:
