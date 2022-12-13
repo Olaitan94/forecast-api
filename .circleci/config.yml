@@ -2,18 +2,16 @@ version: 2.1
 
 orbs:
   python: circleci/python@2.1.1
-  heroku: circleci/heroku@2.0.0
+  heroku: circleci/heroku@1.2.6
 
 
 workflows:
   build_test_deploy:
-    docker:
-      - image: cimg/python:3.9.13
     jobs:
       - build-and-test
       - heroku/deploy-via-git:
           #force: true
-          app-name: $HEROKU_APP_NAME
+          app-name: HEROKU_APP_NAME
           filters:
             branches:
               only: master #only deploy when on the master branch
@@ -31,8 +29,8 @@ jobs:
 #          pkg-manager: pip
 
   build-and-test:
-    #docker:
-      #- image: cimg/python:3.9.13
+    docker:
+      - image: cimg/python:3.9.13
     steps:
       - checkout
       - python/install-packages:
