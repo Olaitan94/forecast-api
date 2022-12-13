@@ -30,8 +30,7 @@ jobs:
 
   build-and-test:
     docker:
-      - image: cimg/python:3.9.13
-    working_directory: ~\forecast_api\forecast_api
+      - image: cimg/python:3.9.16
     steps:
       - checkout
       - python/install-packages:
