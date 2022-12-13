@@ -12,6 +12,7 @@ prophet==1.1.1
 Cad-usd-forecast-model==0.0.1 #My package
 pytest==7.2.0
 requests>=2.23.0,<2.24.0
+httpx
 
 #Note: the Cad-usd-forecast-model has Pystan and prophet as dependencies.
 #Make sure you install g++ compiler and then install these two dependencies to run on your local host
