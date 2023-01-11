@@ -1,5 +1,5 @@
 #tell heroku what version oh python runtime you are using
 #make sure this is the same as the python version used to compile this app, use python --version to check
-
+#I had to rename this file because for some reason it wasnt working with circle ci. #but it usually be named "runtime.txt"
 
 #python-3.9.13
