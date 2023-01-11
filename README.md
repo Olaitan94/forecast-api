@@ -4,7 +4,7 @@ The API uses the forecast_mdoel created by me (link).
 
 Find below the description of the different components & their respective uses:
 
-# app: 
+# app:
 This is the main package in this directory and It contains a number of files that is used to develop our API.
   1. Schemas: This folder contains files that are used to define the format of the inputs or outputs of the API's endpoints. There are two schema files:
     - forecast.py: contains schema for the format of the inputs & outputs for the forecast endpoint
@@ -16,21 +16,24 @@ This is the main package in this directory and It contains a number of files tha
       - conftest.py - contains a fixture fxn which is used to provide forecast period to the other test.
       - test_api.py - used to test the predict endpoint of the api
 
-# requirements.txt: 
+# Dockerfile
+Contains commands used to build the docker image for this api.
+The image can be gottn by running "docker pull olaitanlawal/forecast_api"
+
+# requirements.txt:
 Contains dependencies required to use the API
-# Procfile: 
+# Procfile:
 This file is a requirement from heroku when deploying an app to heroku. It tells heroku how to run the application
-# Manifest.in: 
+# Manifest.in:
 Contains instructions for what to include or exclude when building the package
-# runtime.txt: 
+# runtime.txt:
 File to tell heroku what version of language(python) and version was used to create the API
-# test_requirements.txt: 
+# test_requirements.txt:
 Contains dependencies required to test the API
-# tox.ini: 
+# tox.ini:
 This file contains the settings for using tox for automated test but I didnt use tox to test this API.
 
 # Testing:
-
 - To test this API, run the command "pytest" on cmd
 
 # How to use this API :
